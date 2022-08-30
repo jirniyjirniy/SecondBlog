@@ -1,0 +1,10 @@
+<div class="col-md-10">
+    <div class="{{ menu_class }}">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% for cat in categories %}
+                <li><a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

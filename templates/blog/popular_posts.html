@@ -1,0 +1,17 @@
+{% load static %}
+<h2 class="sidebar-title">Popular posts</h2>
+<div class="grid">
+    <div class="portfolio-item popular">
+        {% for post in posts %}
+            {% if post.photo %}
+                <img src="{{ post.photo.url }}" alt="{{ post.title }}">
+            {% else %}
+                <img src="{% static 'img/portfolio1.jpg' %}" alt="">
+            {% endif %}
+            <div class="portfolio-text">
+                <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+                <p>By {{ post.author }} <span>|</span>{{ post.created_at }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

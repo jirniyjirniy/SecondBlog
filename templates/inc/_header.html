@@ -1,0 +1,14 @@
+{% load menu %}
+
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="logo">
+                    <h2><a href="{% url 'home' %}">Classic</a></h2>
+                </div>
+            </div>
+            {% show_menu %}
+        </div>
+    </div>
+</header>

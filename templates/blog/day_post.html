@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    {% for item in post %}
+    <div class="single-post-big">
+        <div class="big-image">
+            <img src="{{ item.photo.url }}" alt="{{ item.title }}">
+        </div>
+        <div class="big-text">
+            <h3><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h3>
+            <p>{{ item.content|safe|truncatewords_html:75 }}</p>
+
+            <h4><span class="date">{{ item.created_at }}</span><span class="author">Posted By: <span
+                    class="author-name">{{ item.author }}</span></span>
+            </h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
